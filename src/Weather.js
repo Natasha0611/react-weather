@@ -39,10 +39,30 @@ export default function Weather() {
   let form = (
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Type a city" onChange={updateCity} />
-      <button type="Submit">Search</button>
-      <button type="Submit">Current</button>
+      <button class="btn btn-primary" type="Submit">Search</button>
+      <button class="btn btn-success" type="Submit">Current</button>
     </form>
   );
+ let days = (
+   <div class="d-flex justify-content-evenly">
+ <div>Mon</div>
+ <div>Tue</div>
+ <div>Wen</div>
+ <div>Thu</div>
+ <div>Fri</div>
+ <div>Sat</div>
+ </div>
+ );
+ let maxtemp = (
+  <div class="d-flex justify-content-evenly">
+    <p> 12°C</p>
+    <p> 15°C</p>
+    <p> 10°C</p>
+    <p> 11°C</p>
+    <p> 8°C</p>
+    <p> 9°C</p>
+  </div>
+ )
 
   if (loaded) {
     return (
@@ -66,20 +86,13 @@ export default function Weather() {
             </div>
           </div>
         </div> 
-        <div className="col-6">
+        <div className="col-6  lh-sm">
         <p>Humidity: {weather.humidity}%</p>
         <p>Wind: {Math.round(weather.wind)}km/h</p>
         </div> 
   </div>
-  <div class="d-flex justify-content-evenly">
-      <div>Mon</div>
-      <div>Tue</div>
-      <div>Wen</div>
-      <div>Thu</div>
-      <div>Fri</div>
-      <div>Sat</div>
-      
-    </div>
+ {days}
+ {maxtemp}
   </div>
     );
   } else {
@@ -97,7 +110,7 @@ export default function Weather() {
               className="float-left"
             />
             <div className="float-left">
-            <strong className="weather-temperature">{Math.round(weather.temperature)}</strong>
+            <strong className="weather-temperature">19</strong>
               <span className="units">
                 <a href="/">°C</a> | <a href="/">°F</a>
               </span>
@@ -105,18 +118,11 @@ export default function Weather() {
           </div>
         </div> 
         <div className="col-6">
-        <p>Humidity: {weather.humidity}%</p>
-        <p>Wind: {Math.round(weather.wind)}km/h</p>
+        <p>Humidity: 20%</p>
+        <p>Wind: 2km/h</p>
         </div> 
   </div>
-  <div class="d-flex justify-content-evenly">
-      <div>Mon</div>
-      <div>Tue</div>
-      <div>Wen</div>
-      <div>Thu</div>
-      <div>Fri</div>
-      <div>Sat</div>
-     </div>
+ {days}
   </div>
     );
   }
