@@ -12,6 +12,7 @@ root.render(
   <StrictMode>
     <div className="App">
       <Weather />
+      <a className="link" href="https://github.com/Natasha0611/react-weather">Open-sourced on GIT</a>
     </div>
   </StrictMode>
 );

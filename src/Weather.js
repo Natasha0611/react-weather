@@ -71,9 +71,15 @@ export default function Weather() {
         <p>Wind: {Math.round(weather.wind)}km/h</p>
         </div> 
   </div>
-        <div className="col-2">
-       
-      </div> 
+  <div class="d-flex justify-content-evenly">
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wen</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+      
+    </div>
   </div>
     );
   } else {
@@ -102,9 +108,14 @@ export default function Weather() {
         <p>Wind: {Math.round(weather.wind)}km/h</p>
         </div> 
   </div>
-        <div className="col-2">
-       
-      </div> 
+  <div class="d-flex justify-content-evenly">
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wen</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+     </div>
   </div>
     );
   }
