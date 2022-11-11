@@ -84,8 +84,9 @@ export default function Weather() {
     );
   } else {
     return(
-    <div className="Weather">{form}
-      <h1>{city}</h1>
+    <div className="Weather">
+      {form}
+      <h1>Kyiv</h1>
         <Date />
         <p>{weather.description}</p>
       <div className="row">
