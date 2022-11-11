@@ -7,14 +7,19 @@
   .Weather .overview {
     margin-bottom: 20px;
   }
-  
-  .Weather .weather-temperature img {
-    margin-right: 5px;
-    height: 64px;
-    width: 64px;
+  .App{
+    max-width: 600px;
+    margin: 30px auto;
   }
-  
-  .Weather .weather-temperature strong {
+  .Weather img {
+    margin-right: 5px;
+    height: 94px;
+    width: 94px;
+  }
+  .Weather button{
+    color: rgb(52, 85, 218);
+  }
+  .Weather .weather-temperature{
     color: rgb(33, 33, 33);
     font-size: 64px;
     line-height: 1;
@@ -66,4 +71,5 @@
     line-height: 15px;
     white-space: nowrap;
   }
+
   

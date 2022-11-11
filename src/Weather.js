@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import Date from "./Date";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+
 
 export default function Weather() {
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState(" ");
+
+ 
+  
 
   function showWeather(response) {
     setLoaded(true);
@@ -32,25 +40,72 @@ export default function Weather() {
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Type a city" onChange={updateCity} />
       <button type="Submit">Search</button>
+      <button type="Submit">Current</button>
     </form>
   );
 
   if (loaded) {
     return (
-      <div>
+    <div className="Weather">
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {Math.round(weather.wind)}km/h</li>
-          <li>Description: {weather.description}</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
-      </div>
+        <h1>{city}</h1>
+        <Date />
+        <p>{weather.description}</p>
+      <div className="row">
+        <div className="col-6">
+          <div className="clearfix weather-temperature">
+            <img
+              src={weather.icon} alt={weather.description}
+              className="float-left"
+            />
+            <div className="float-left">
+            <strong className="weather-temperature">{Math.round(weather.temperature)}</strong>
+              <span className="units">
+                <a href="/">°C</a> | <a href="/">°F</a>
+              </span>
+            </div>
+          </div>
+        </div> 
+        <div className="col-6">
+        <p>Humidity: {weather.humidity}%</p>
+        <p>Wind: {Math.round(weather.wind)}km/h</p>
+        </div> 
+  </div>
+        <div className="col-2">
+       
+      </div> 
+  </div>
     );
   } else {
-    return form;
+    return(
+    <div className="Weather">{form}
+      <h1>{city}</h1>
+        <Date />
+        <p>{weather.description}</p>
+      <div className="row">
+        <div className="col-6">
+          <div className="clearfix weather-temperature">
+            <img
+              src={weather.icon} alt={weather.description}
+              className="float-left"
+            />
+            <div className="float-left">
+            <strong className="weather-temperature">{Math.round(weather.temperature)}</strong>
+              <span className="units">
+                <a href="/">°C</a> | <a href="/">°F</a>
+              </span>
+            </div>
+          </div>
+        </div> 
+        <div className="col-6">
+        <p>Humidity: {weather.humidity}%</p>
+        <p>Wind: {Math.round(weather.wind)}km/h</p>
+        </div> 
+  </div>
+        <div className="col-2">
+       
+      </div> 
+  </div>
+    );
   }
 }
