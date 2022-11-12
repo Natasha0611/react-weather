@@ -76,7 +76,7 @@ export default function Weather() {
           <div className="clearfix weather-temperature">
             <img
               src={weather.icon} alt={weather.description}
-              className="float-left"
+              class="float-left"
             />
             <div className="float-left">
             <strong className="weather-temperature">{Math.round(weather.temperature)}</strong>
@@ -86,7 +86,7 @@ export default function Weather() {
             </div>
           </div>
         </div> 
-        <div className="col-6  lh-sm">
+        <div className="col-6">
         <p>Humidity: {weather.humidity}%</p>
         <p>Wind: {Math.round(weather.wind)}km/h</p>
         </div> 
@@ -106,7 +106,8 @@ export default function Weather() {
         <div className="col-6">
           <div className="clearfix weather-temperature">
             <img
-              src={weather.icon} alt={weather.description}
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+               alt={weather.description}
               className="float-left"
             />
             <div className="float-left">
@@ -123,6 +124,7 @@ export default function Weather() {
         </div> 
   </div>
  {days}
+ {maxtemp}
   </div>
     );
   }

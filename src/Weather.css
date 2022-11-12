@@ -15,8 +15,11 @@
     text-decoration: none;
     margin: 30px auto;
   }
+  .Weather .units a{
+    text-decoration: none;
+  }
   .Weather img {
-    margin-right: 5px;
+    margin-right: 550px;
     height: 94px;
     width: 94px;
   }
