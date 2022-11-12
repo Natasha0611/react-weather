@@ -63,6 +63,16 @@ export default function Weather() {
     <p> 9°C</p>
   </div>
  )
+ let mintemp = (
+  <div class="d-flex justify-content-evenly">
+    <p> 5°C</p>
+    <p> 6°C</p>
+    <p> 7°C</p>
+    <p> 5°C</p>
+    <p> 8°C</p>
+    <p> 5°C</p>
+  </div>
+ )
 
   if (loaded) {
     return (
@@ -93,6 +103,7 @@ export default function Weather() {
   </div>
  {days}
  {maxtemp}
+ {mintemp}
   </div>
     );
   } else {
@@ -125,6 +136,7 @@ export default function Weather() {
   </div>
  {days}
  {maxtemp}
+ {mintemp}
   </div>
     );
   }
